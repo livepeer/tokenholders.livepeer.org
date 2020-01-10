@@ -70,9 +70,9 @@ const Page = ({ contributors }) => {
               image={<img sx={{ width: "100%" }} src="/img/community.png" />}
             />
           </Fade>
-
           <Carousel
             sx={{
+              display: ["none", "none", "block"],
               borderTop: "1px solid #eee",
               pt: 8,
               pb: 5
@@ -80,6 +80,31 @@ const Page = ({ contributors }) => {
             title="Our Community"
             naturalSlideWidth={100}
             naturalSlideHeight={100}
+            visibleSlides={3}
+            step={3}
+            slides={[
+              ...contributors.map((contributor, i) => (
+                <PersonCard
+                  key={i}
+                  name={contributor.name}
+                  image={contributor.image}
+                  country={contributor.country}
+                />
+              ))
+            ]}
+          />
+          <Carousel
+            sx={{
+              display: ["block", "block", "none"],
+              borderTop: "1px solid #eee",
+              pt: 8,
+              pb: 5
+            }}
+            title="Our Community"
+            naturalSlideWidth={100}
+            naturalSlideHeight={140}
+            visibleSlides={2}
+            step={2}
             slides={[
               ...contributors.map((contributor, i) => (
                 <PersonCard

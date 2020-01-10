@@ -20,6 +20,8 @@ export default ({
   slides = [],
   naturalSlideWidth,
   naturalSlideHeight,
+  visibleSlides = 3,
+  step = 3,
   ...props
 }) => {
   const [width, height] = useWindowSize();
@@ -43,8 +45,8 @@ export default ({
         naturalSlideWidth={naturalSlideWidth}
         naturalSlideHeight={naturalSlideHeight}
         totalSlides={slides.length}
-        visibleSlides={width < 800 ? 1 : 3}
-        step={width < 800 ? 1 : 3}
+        visibleSlides={visibleSlides}
+        step={step}
       >
         <Slider>
           {slides.map((slide, i) => (
@@ -76,7 +78,7 @@ export default ({
           </ButtonBack>
           {slides.map(
             (_, i) =>
-              i % (width < 800 ? i : 3) === 0 && (
+              i % step === 0 && (
                 <Dot
                   sx={{
                     mr: 2,
