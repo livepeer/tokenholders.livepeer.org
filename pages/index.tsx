@@ -49,7 +49,7 @@ const Page = () => {
                     Livepeer Powers Video
                   </Styled.h3>
                 }
-                body="For companies, video streaming services are insanely expensive. Livepeer offers a decentralized alternative that’s more affordable, scalable and reliable. And it’s powered by tokenholders."
+                body="Companies building video applications are faced with the expensive costs of streaming infrastructure. Livepeer offers a decentralized alternative that’s more affordable, scalable and reliable. And it’s powered by tokenholders."
                 callToAction={
                   <Button
                     as="a"
