@@ -19,6 +19,7 @@ export default ({
         border: outline ? "1px solid #dadce0" : 0,
         cursor: "pointer",
         borderRadius: outline ? 6 : 0,
+        width: "100%",
         boxShadow: outline ? "none" : "0px 0px 60px rgba(0, 0, 0, 0.1)"
       }}
     >
