@@ -26,17 +26,23 @@ export default () => {
               itemScope
               itemType="http://schema.org/Organization"
             >
-              <span itemProp="name">Livepeer Inc.</span>
+              <Box itemProp="name">Livepeer Inc.</Box>
               <Box
                 itemProp="address"
                 itemScope
                 itemType="http://schema.org/PostalAddress"
               >
-                <span itemProp="streetAddress">16 Vestry St, Floor 4</span>
-                <span itemProp="addressLocality">New York, NY</span>
+                <Box itemProp="streetAddress">16 Vestry St, Floor 4</Box>
+                <span itemProp="addressLocality">New York, NY </span>
                 <span itemProp="postalCode">10013</span>
               </Box>
-              <span itemProp="email">contact@livepeer.org</span>
+              <a
+                itemProp="email"
+                sx={{ color: "white" }}
+                href="mailto:contact@livepeer.org"
+              >
+                contact@livepeer.org
+              </a>
             </Box>
           </Box>
         </Flex>
