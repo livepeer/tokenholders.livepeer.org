@@ -1,0 +1,22 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    "inline-react-svg",
+    [
+      "wildcard",
+      {
+        "exts": [
+          "js",
+          "es6",
+          "es",
+          "jsx",
+          "javascript",
+          "ts",
+          "tsx",
+          "md",
+          "mdx"
+        ]
+      }
+    ]
+  ]
+}

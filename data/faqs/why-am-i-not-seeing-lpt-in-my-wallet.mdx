@@ -1,0 +1,6 @@
+export const metadata = {
+  question: "Why am I not seeing any LPT in my wallet after claiming them? Is it a bug?",
+  category: 'livepeer token (LPT)'
+}
+
+It is not a bug. When you claim, the smart contract updates its internal state and nothing happens from user point of view. The previously "unclaimed" LPT was already shown in your staked amount.

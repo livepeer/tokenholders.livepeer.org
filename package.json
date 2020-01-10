@@ -1,0 +1,94 @@
+{
+  "name": "tokenholderes.livepeer.org",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "@apollo/react-ssr": "^3.1.3",
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.23",
+    "@material/react-ripple": "^0.15.0",
+    "@mdx-js/loader": "^1.5.3",
+    "@mdx-js/mdx": "^1.5.3",
+    "@mdx-js/react": "^1.4.5",
+    "@mdx-js/tag": "^0.20.3",
+    "@next/mdx": "^9.1.7",
+    "@theme-ui/color": "^0.2.53",
+    "@theme-ui/components": "^0.2.50",
+    "@theme-ui/presets": "^0.2.44",
+    "@types/react-burger-menu": "^2.6.0",
+    "@zeit/next-css": "^1.0.1",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-prismic": "^1.0.6",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "graphql-tools": "^4.0.6",
+    "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
+    "next": "^9.1.8-canary.6",
+    "next-seo": "^3.2.0",
+    "pascal-case": "^3.1.1",
+    "prismic-reactjs": "^1.1.2",
+    "pure-react-carousel": "^1.24.1",
+    "react": "^16.8.4",
+    "react-burger-menu": "^2.6.13",
+    "react-countup": "^4.3.1",
+    "react-dom": "^16.8.4",
+    "react-hook-inview": "^4.1.3",
+    "react-icons": "^3.8.0",
+    "react-ink": "^6.4.0",
+    "react-masonry-css": "^1.0.14",
+    "react-responsive-modal": "^4.0.1",
+    "react-reveal": "^1.2.2",
+    "react-ripples": "^2.2.1",
+    "react-scroll": "^1.7.15",
+    "react-select": "^3.0.8",
+    "require-context": "^1.1.0",
+    "serve": "^11.3.0",
+    "theme-ui": "^0.2.52",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@storybook/react": "^5.2.8",
+    "@types/styled-jsx": "^2.2.8",
+    "@types/theme-ui": "^0.2.6",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-emotion": "^10.0.27",
+    "babel-plugin-import-graphql": "^2.7.0",
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-plugin-wildcard": "^6.0.0",
+    "husky": "^4.0.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "typescript": "^3.7.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.mdx?": [
+      "prettier --write --parser mdx",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
