@@ -19,7 +19,7 @@ const Page = ({ resources, categories }) => {
     <Layout
       title="Livepeer Tokenholders - Resources"
       description="Livepeer Tokenholders - Resources"
-      url={`https://tokenholders.livepeer.org/${asPath}`}
+      url={`https://tokenholders.livepeer.org${asPath}`}
     >
       <Fade>
         <Box>

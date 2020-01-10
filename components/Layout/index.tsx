@@ -26,8 +26,8 @@ export default ({ title, description, children, image, url }: Props) => {
         {
           url: image
             ? image.url
-            : "https://tokenholders.livepeer.org/static/img/logo.png",
-          alt: image ? image.alt : "Livepeer"
+            : "https://tokenholders.livepeer.org/img/social.png",
+          alt: image ? image.alt : "Livepeer Tokenholders"
         }
       ]
     }

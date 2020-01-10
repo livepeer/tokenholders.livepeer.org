@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Box, Container, Styled, Flex } from "theme-ui";
-import { Grid, Text } from "@theme-ui/components";
+import { Text } from "@theme-ui/components";
 import {
   CarouselProvider,
   Slider,
@@ -12,6 +12,7 @@ import {
 } from "pure-react-carousel";
 import ArrowLeftIcon from "../../public/img/arrow-left.svg";
 import ArrowRightIcon from "../../public/img/arrow-right.svg";
+import { useWindowSize } from "@react-hook/window-size";
 
 export default ({
   title = null,
@@ -21,6 +22,7 @@ export default ({
   naturalSlideHeight,
   ...props
 }) => {
+  const [width, height] = useWindowSize();
   return (
     <Container sx={{ py: 0 }} {...props}>
       <Box sx={{ pb: 6 }}>
@@ -41,8 +43,8 @@ export default ({
         naturalSlideWidth={naturalSlideWidth}
         naturalSlideHeight={naturalSlideHeight}
         totalSlides={slides.length}
-        visibleSlides={3}
-        step={3}
+        visibleSlides={width < 800 ? 1 : 3}
+        step={width < 800 ? 1 : 3}
       >
         <Slider>
           {slides.map((slide, i) => (
@@ -74,7 +76,7 @@ export default ({
           </ButtonBack>
           {slides.map(
             (_, i) =>
-              i % 3 === 0 && (
+              i % (width < 800 ? i : 3) === 0 && (
                 <Dot
                   sx={{
                     mr: 2,

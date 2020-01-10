@@ -23,7 +23,7 @@ const Page = ({ faqs, categories }) => {
       <Layout
         title="Livepeer Tokenholders - FAQ"
         description="Livepeer Tokenholders - FAQ"
-        url={`https://tokenholders.livepeer.org/${asPath}`}
+        url={`https://tokenholders.livepeer.org${asPath}`}
       >
         <Fade>
           <Box>
@@ -101,7 +101,7 @@ const Page = ({ faqs, categories }) => {
                                       </a>
                                     </Styled.h5>
                                     <Box
-                                      sx={{ wordBreak: "break-all" }}
+                                      sx={{ wordBreak: "break-word" }}
                                       dangerouslySetInnerHTML={{
                                         __html: Markup
                                       }}

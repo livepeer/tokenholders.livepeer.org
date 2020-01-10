@@ -12,6 +12,7 @@ import { Box } from "theme-ui";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Link from "next/link";
+import { Link as ScrollLink, Element } from "react-scroll";
 
 const Page = () => {
   const router = useRouter();
@@ -21,7 +22,7 @@ const Page = () => {
     <Layout
       title="Livepeer Tokenholders - Home"
       description="Livepeer Tokenholders - Home"
-      url={`https://tokenholders.livepeer.org/${asPath}`}
+      url={`https://tokenholders.livepeer.org${asPath}`}
     >
       <Fade>
         <Box>
@@ -32,35 +33,41 @@ const Page = () => {
               body="Everyday, thousands of tokenholders participate in the Livepeer, the
             world’s first open source, peer-to-peer video transcoding platform."
               image={<img sx={{ width: "100%" }} src="/img/tokenholders.png" />}
-              button={<Button>Learn More</Button>}
+              button={
+                <ScrollLink offset={-100} to="learn-more" spy smooth>
+                  <Button>Learn More</Button>
+                </ScrollLink>
+              }
             />
           </Fade>
           <Fade>
-            <Panel
-              sx={{ mt: 4 }}
-              heading={
-                <Styled.h3 as="h2" sx={{ mb: 2 }}>
-                  Livepeer Powers Video
-                </Styled.h3>
-              }
-              body="For companies, video streaming services are insanely expensive. Livepeer offers a decentralized alternative that’s more affordable, scalable and reliable. And it’s powered by tokenholders."
-              callToAction={
-                <Button
-                  as="a"
-                  target="__blank"
-                  rel="noopener noreferrer"
-                  href="https://livepeer.org/primer"
-                >
-                  Read the Primer
-                </Button>
-              }
-              image={
-                <img
-                  sx={{ ml: "auto", maxWidth: 380 }}
-                  src="/img/broadcaster.png"
-                />
-              }
-            />
+            <Element name="learn-more">
+              <Panel
+                sx={{ mt: 4 }}
+                heading={
+                  <Styled.h3 as="h2" sx={{ mb: 2 }}>
+                    Livepeer Powers Video
+                  </Styled.h3>
+                }
+                body="For companies, video streaming services are insanely expensive. Livepeer offers a decentralized alternative that’s more affordable, scalable and reliable. And it’s powered by tokenholders."
+                callToAction={
+                  <Button
+                    as="a"
+                    target="__blank"
+                    rel="noopener noreferrer"
+                    href="https://livepeer.org/primer"
+                  >
+                    Read the Primer
+                  </Button>
+                }
+                image={
+                  <img
+                    sx={{ ml: "auto", maxWidth: 380 }}
+                    src="/img/broadcaster.png"
+                  />
+                }
+              />
+            </Element>
           </Fade>
           <Fade>
             <CardGrid sx={{ mt: 100 }} heading="Getting Started">

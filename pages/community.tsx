@@ -20,7 +20,7 @@ const Page = ({ contributors }) => {
     <Layout
       title="Livepeer Tokenholders - Community"
       description="Livepeer Tokenholders - Community"
-      url={`https://tokenholders.livepeer.org/${asPath}`}
+      url={`https://tokenholders.livepeer.org${asPath}`}
     >
       <Fade>
         <Box>
@@ -45,7 +45,7 @@ const Page = ({ contributors }) => {
                       href="https://discord.gg/TTUQqK"
                       target="__blank"
                       rel="noopener noreferrer"
-                      sx={{ mr: 3 }}
+                      sx={{ mb: [1, 1, 0], mr: [0, 0, 3] }}
                     >
                       Chat with us
                     </Link>
@@ -53,7 +53,7 @@ const Page = ({ contributors }) => {
                       href="https://forum.livepeer.org/"
                       target="__blank"
                       rel="noopener noreferrer"
-                      sx={{ mr: 3 }}
+                      sx={{ mb: [1, 1, 0], mr: [0, 0, 3] }}
                     >
                       Join the forum
                     </Link>
