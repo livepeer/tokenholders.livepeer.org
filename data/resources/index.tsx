@@ -67,6 +67,13 @@ const resources: Array<Resource> = [
     link: "https://livepeer.tools"
   },
   {
+    title: "Scout.cool",
+    byline: "By Scout",
+    category: "tools",
+    description: "Protocol analytics and querying",
+    link: "https://scout.cool/livepeer/mainnet"
+  },
+  {
     title: "Unified Rest API",
     byline: "By Fabrix.io",
     category: "develop",
