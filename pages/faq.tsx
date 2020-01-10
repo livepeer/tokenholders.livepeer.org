@@ -101,6 +101,7 @@ const Page = ({ faqs, categories }) => {
                                       </a>
                                     </Styled.h5>
                                     <Box
+                                      sx={{ wordBreak: "break-all" }}
                                       dangerouslySetInnerHTML={{
                                         __html: Markup
                                       }}
