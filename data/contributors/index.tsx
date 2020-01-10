@@ -6,11 +6,6 @@ export type Contributor = {
 
 const contributors: Array<Contributor> = [
   {
-    name: "Kellie Pcolar",
-    image: "/img/contributors/kellie-pcolar.jpg",
-    country: "us"
-  },
-  {
     name: "Nelson Ryan",
     image: "/img/contributors/nelson-ryan.jpg",
     country: "gb"
@@ -19,6 +14,16 @@ const contributors: Array<Contributor> = [
     name: "Julien Bouteloup",
     image: "/img/contributors/julien-bouteloup.jpg",
     country: "fr"
+  },
+  {
+    name: "Kellie Pcolar",
+    image: "/img/contributors/kellie-pcolar.jpg",
+    country: "us"
+  },
+  {
+    name: "Cristian Malfesi",
+    image: "/img/contributors/cristian-malfesi.jpg",
+    country: "ar"
   },
   {
     name: "Felipe Gaúcho",
@@ -35,15 +40,9 @@ const contributors: Array<Contributor> = [
     image: "/img/contributors/ryan-berkun.jpg",
     country: "us"
   },
-
   {
     name: "Gareth Mensah",
     image: "/img/contributors/gareth-mensah.jpg",
-    country: "us"
-  },
-  {
-    name: "Matt Pringle",
-    image: "/img/contributors/matt-pringle.jpg",
     country: "us"
   }
 ];
