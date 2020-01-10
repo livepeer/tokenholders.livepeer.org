@@ -7,7 +7,7 @@ import Masthead from "../components/Masthead";
 import { Box, Flex } from "theme-ui";
 import CardGrid from "../components/CardGrid";
 import Card from "../components/Card";
-import { MdOndemandVideo, MdBook } from "react-icons/md";
+import { MdDescription, MdBuild, MdCode } from "react-icons/md";
 import { groupBy } from "../lib/helpers";
 import { useState } from "react";
 
@@ -82,14 +82,21 @@ const Page = ({ resources, categories }) => {
                     : resource.category === activeCategory
                 )
                 .map((resource, i) => (
-                  <Card
+                  <a
                     key={i}
-                    outline
-                    icon={getIcon(resource.category)}
-                    title={resource.title}
-                    subtitle={resource.byline}
-                    body={resource.description}
-                  />
+                    href={resource.link}
+                    target="__blank"
+                    rel="noopener noreferrer"
+                    sx={{ display: "flex", textDecoration: "none" }}
+                  >
+                    <Card
+                      outline
+                      icon={getIcon(resource.category)}
+                      title={resource.title}
+                      subtitle={resource.byline}
+                      body={resource.description}
+                    />
+                  </a>
                 ))}
             </CardGrid>
           </Fade>
@@ -101,11 +108,11 @@ const Page = ({ resources, categories }) => {
 
 function getIcon(category) {
   if (category === "develop") {
-    return <MdOndemandVideo sx={{ fontSize: 24, color: "primary" }} />;
-  } else if (category === "tool") {
-    return <MdOndemandVideo sx={{ fontSize: 24, color: "primary" }} />;
+    return <MdCode sx={{ fontSize: 24, color: "primary" }} />;
+  } else if (category === "tools") {
+    return <MdBuild sx={{ fontSize: 24, color: "primary" }} />;
   } else {
-    return <MdBook sx={{ fontSize: 24, color: "primary" }} />;
+    return <MdDescription sx={{ fontSize: 24, color: "primary" }} />;
   }
 }
 
