@@ -116,7 +116,6 @@ const Page = ({ contributors }) => {
               ))
             ]}
           />
-
           <Fade>
             <Panel
               sx={{ my: 8 }}
@@ -131,9 +130,9 @@ const Page = ({ contributors }) => {
                   as="a"
                   target="__blank"
                   rel="noopener noreferrer"
-                  href="https://calendar.google.com/calendar/embed?src=livepeer.org_bf2ckq8bk973faffua7bkbojj4%40group.calendar.google.com&ctz=America%2FNew_York"
+                  href="https://forum.livepeer.org/t/community-call-schedule/993"
                 >
-                  Sign up
+                  View Call Schedule
                 </Button>
               }
               image={
