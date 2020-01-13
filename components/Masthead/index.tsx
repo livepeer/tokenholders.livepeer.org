@@ -12,7 +12,7 @@ export default ({
 }) => {
   return (
     <Box {...props}>
-      <Container sx={{ pt: [40, 40, 60], pb: 80 }}>
+      <Container sx={{ pt: 40, pb: 80 }}>
         <Grid columns={[1, 1, 1, center ? 1 : 2]} sx={{ alignItems: "center" }}>
           <Box
             sx={{

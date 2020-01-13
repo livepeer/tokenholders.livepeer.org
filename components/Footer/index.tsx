@@ -15,7 +15,14 @@ export default () => {
       }}
     >
       <Container>
-        <Flex sx={{ alignItems: "center", justifyContent: "space-between" }}>
+        <Flex
+          sx={{
+            flexDirection: ["column", "column", "row"],
+            alignItems: "center",
+            textAlign: ["center", "center", "left"],
+            justifyContent: "space-between"
+          }}
+        >
           <Box>
             <Logo sx={{ color: "white" }} />
           </Box>

@@ -30,7 +30,7 @@ const Page = () => {
             <Masthead
               sx={{ mt: 4 }}
               title="Join the Video Streaming Revolution"
-              body="Everyday, thousands of tokenholders participate in the Livepeer, the
+              body="Everyday, thousands of tokenholders participate in Livepeer, the
             world’s first open source, peer-to-peer video transcoding platform."
               image={<img sx={{ width: "100%" }} src="/img/tokenholders.png" />}
               button={
