@@ -143,7 +143,9 @@ const Page = () => {
               body="You likely have some questions. Get instant answers to the most common questions and learn how to participate in Livepeer like a pro."
               callToAction={
                 <Link href="/faq" passHref>
-                  <Button as="a">View FAQ</Button>
+                  <a>
+                    <Button>View FAQ</Button>
+                  </a>
                 </Link>
               }
               image={<img sx={{ maxWidth: 260 }} src="/img/faq.png" />}

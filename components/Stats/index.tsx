@@ -1,8 +1,93 @@
 /** @jsx jsx */
 import { jsx, Container, Styled } from "theme-ui";
 import { Grid, Box } from "@theme-ui/components";
+import { useEffect, useState } from "react";
+import { request } from "graphql-request";
 
 export default ({ ...props }) => {
+  const [totalDelegators, setTotalDelegators] = useState(2450);
+  const [totalTranscoders, setTotalTranscoders] = useState(25);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const reqDelegators = async skip => {
+        const query = `query delegators ($skip: Int $where: Delegator_filter) {
+        delegators(skip: $skip where: $where) {
+          id
+        }
+      }`;
+
+        let response = await request(
+          "https://api.thegraph.com/subgraphs/name/livepeer/livepeer-canary",
+          query,
+          {
+            skip: skip,
+            where: {
+              bondedAmount_not: 0
+            }
+          }
+        );
+        return response.delegators;
+      };
+      const getDelegators = async () => {
+        const PAGE_SIZE = 100;
+        let delegators = [];
+        let keepGoing = true;
+        let skip = 0;
+        while (keepGoing) {
+          let response = await reqDelegators(skip);
+
+          await delegators.push.apply(delegators, response);
+          skip += 100;
+          if (response.length < PAGE_SIZE) {
+            keepGoing = false;
+            return delegators;
+          }
+        }
+      };
+
+      const getTranscoders = async currentRound => {
+        const query = `{
+          transcoders(where: { deactivationRound_gt: "${currentRound}" activationRound_lte: "${currentRound}" }) {
+            id
+          }
+        }`;
+
+        let response = await request(
+          "https://api.thegraph.com/subgraphs/name/livepeer/livepeer-canary",
+          query
+        );
+        return response.transcoders;
+      };
+
+      const getCurrentRound = async () => {
+        const query = `{
+          rounds(first: 1 orderBy: timestamp orderDirection:desc) {
+            id
+          }
+        }`;
+
+        let response = await request(
+          "https://api.thegraph.com/subgraphs/name/livepeer/livepeer-canary",
+          query
+        );
+        return parseInt(response.rounds[0].id);
+      };
+
+      const start = async () => {
+        let currentRound = await getCurrentRound();
+        let delegators = await getDelegators();
+        let transcoders = await getTranscoders(currentRound);
+
+        setTotalDelegators(delegators.length);
+        setTotalTranscoders(transcoders.length);
+        setLoading(false);
+      };
+      start();
+    })();
+  }, []);
+
   return (
     <Box sx={{ mx: [2] }} {...props}>
       <Container
@@ -33,10 +118,11 @@ export default ({ ...props }) => {
               sx={{
                 lineHeight: "initial",
                 fontSize: [48, 48, 64],
-                color: "accent"
+                color: "accent",
+                textAlign: "center"
               }}
             >
-              25
+              {totalTranscoders}
             </Box>
             Infrastucture Providers
           </Box>
@@ -57,10 +143,11 @@ export default ({ ...props }) => {
               sx={{
                 lineHeight: "initial",
                 fontSize: [48, 48, 64],
-                color: "accent"
+                color: "accent",
+                textAlign: "center"
               }}
             >
-              2433
+              {totalDelegators}
             </Box>
             Delegators
           </Box>

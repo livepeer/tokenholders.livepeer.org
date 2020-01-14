@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from "theme-ui";
 import { Box, Text } from "@theme-ui/components";
-import Button from "../Button";
 import Chip from "../Chip";
 
 export default ({
