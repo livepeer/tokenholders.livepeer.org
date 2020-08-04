@@ -1,5 +1,4 @@
 {
   "version": 2,
-  "target": "serverless",
   "redirects": [{ "source": "/(.*)", "destination": "https://livepeer.org" }]
 }
