@@ -1,6 +1,12 @@
 {
   "version": 2,
   "redirects": [
-    { "source": "/(.*)", "destination": "https://livepeer.org/tokenholders" }
+    { "source": "/", "destination": "https://livepeer.org/tokenholders" },
+    { "source": "/resources", "destination": "https://livepeer.org/resources" },
+    {
+      "source": "/faq",
+      "destination": "https://livepeer.org/faq?filter=tokenholders"
+    },
+    { "source": "/community", "destination": "https://livepeer.org" }
   ]
 }
